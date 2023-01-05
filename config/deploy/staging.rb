@@ -4,7 +4,7 @@ set :rails_env, 'staging'
 set :branch, 'main'
 server '34.101.60.13', user: "#{fetch(:user)}", roles: %w{app db web}, primary: true
 set :deploy_to, "/home/#{fetch(:user)}/#{fetch(:application)}"
-set :rvm_ruby_version, '2.6.3'
+set :rvm_ruby_version, '3.1.1'
 set :puma_bind, %w(tcp://0.0.0.0:3000)
 after 'puma:restart', 'puma:start'
 

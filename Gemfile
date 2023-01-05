@@ -66,6 +66,7 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
   gem 'capistrano', '~> 3.11', require: false
+  gem 'capistrano-secrets-yml', '~> 1.0.0'
   gem 'capistrano-rvm'
   gem 'capistrano3-puma'
   gem 'capistrano-rails'
