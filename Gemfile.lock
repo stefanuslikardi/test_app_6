@@ -74,22 +74,31 @@ GEM
     bootsnap (1.10.3)
       msgpack (~> 1.2)
     builder (3.2.4)
-    capistrano (3.5.0)
+    capistrano (3.17.1)
       airbrussh (>= 1.0.0)
-      capistrano-harrow
       i18n
       rake (>= 10.0.0)
       sshkit (>= 1.9.0)
     capistrano-bundler (1.1.4)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
-    capistrano-harrow (0.5.3)
     capistrano-rails (1.1.8)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    capistrano-rails-console (2.3.0)
+      capistrano (>= 3.5.0, < 4.0.0)
+      sshkit-interactive (~> 0.3.0)
+    capistrano-rails-db (0.0.2)
+      capistrano-rails (~> 1.1)
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
+    capistrano-upload-config (0.8.2)
+      capistrano (>= 3.0)
+    capistrano3-puma (5.2.0)
+      capistrano (~> 3.7)
+      capistrano-bundler
+      puma (>= 4.0, < 6.0)
     capybara (3.36.0)
       addressable
       matrix
@@ -209,6 +218,10 @@ GEM
     sshkit (1.21.3)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    sshkit-interactive (0.3.0)
+      sshkit (~> 1.12)
+    sshkit-sudo (0.1.0)
+      sshkit (~> 1.8)
     stimulus-rails (1.0.4)
       railties (>= 6.0.0)
     strscan (3.0.1)
@@ -243,10 +256,13 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  capistrano (= 3.5.0)
-  capistrano-bundler (~> 1.1.4)
-  capistrano-rails (~> 1.1.6)
-  capistrano-rvm (~> 0.1.2)
+  capistrano (~> 3.11)
+  capistrano-rails
+  capistrano-rails-console
+  capistrano-rails-db
+  capistrano-rvm
+  capistrano-upload-config
+  capistrano3-puma
   capybara
   debug
   importmap-rails
@@ -256,6 +272,7 @@ DEPENDENCIES
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)
+  sshkit-sudo
   stimulus-rails
   turbo-rails
   tzinfo-data (~> 1.2021, >= 1.2021.5)
