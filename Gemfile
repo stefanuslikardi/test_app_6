@@ -81,3 +81,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem 'ed25519', '~> 1.2'
